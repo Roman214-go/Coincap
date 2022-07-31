@@ -1,0 +1,19 @@
+header {
+    background-color: black;
+    color: white;
+    width: 100%;
+    .header__layout {
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 5%;
+        .header__popular-crypto {
+            display: flex;
+            gap: 3em;
+        }
+    } 
+    .header__profile {
+        display: flex;
+        
+        gap: 5%;
+    }
+}

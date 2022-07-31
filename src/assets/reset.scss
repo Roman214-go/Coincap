@@ -20,8 +20,17 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 body {
-	background-color: rgb(87, 87, 87);
+	background-color: rgb(155, 155, 155);
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 500;
 }
