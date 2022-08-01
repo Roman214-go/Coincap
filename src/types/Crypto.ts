@@ -1,19 +1,44 @@
+export interface oneCryptoType {
+    id: string,
+    rank: string,
+    symbol: string,
+    name: string,
+    supply: string,
+    maxSupply: string,
+    marketCapUsd: string,
+    volumeUsd24Hr: string,
+    priceUsd: string,
+    changePercent24Hr: string,
+    vwap24Hr: string,
+    explorer: string
+}
+
+export interface cryptoHistoryType {
+    priceUsd: string,
+    time: number,
+    date: string
+}
+
 export interface CryptoState {
-    allCrypto: any[];
+    allCrypto: Array<oneCryptoType>;
     loading: boolean;
     error: null | string;
 }
 
+export interface CryptoHistoryState {
+    cryptoHistory: Array<cryptoHistoryType>
+}
+
 export interface OneCryptoState {
-    crypto: any[];
+    crypto: Array<oneCryptoType>;
     loading: boolean;
     error: null | string;
 }
 
 
 export interface WalletCryptoState {
-    walletCrypto: any[],
-    totalPrice: any,
+    walletCrypto: Array<oneCryptoType>,
+    totalPrice: number,
     exchange: number
 }
 
@@ -45,7 +70,7 @@ interface getAllCryptoErrorAction {
 
 interface getAllCryptoSuccessAction {
     type: cryptoActionTypes.GET_ALL_CRYPTO_SUCCESS;
-    payload: any[]
+    payload: Array<oneCryptoType>
 }
 
 interface getOneCryptoAction {
@@ -59,21 +84,46 @@ interface getOneCryptoErrorAction {
 
 interface getOneCryptoSuccessAction {
     type: oneCryptoActionTypes.GET_ONE_CRYPTO_SUCCESS;
-    payload: any[]
+    payload: oneCryptoType
 }
 
 interface getCryptoWalletAction {
     type: walletCryptoActionTypes.ADD_CRYPTO_TO_WALLET;
-    payload: any
+    payload: oneCryptoType
 }
 
 interface removeCryptoWalletAction {
     type: walletCryptoActionTypes.REMOVE_CRYPTO_FROM_WALLET;
-    payload: any
+    payload: oneCryptoType
 }
+
+export interface getCryptoHistoryAction {
+    type: "GET_CRYPTO_HISTORY";
+    payload: Array<cryptoHistoryType>
+}
+
+export interface ICryptoCont {
+    crypto: oneCryptoType,
+    id: string | undefined
+}
+
+export interface IHeaderPopularCrypto {
+    popularCrypto: Array<oneCryptoType>
+}
+
+export interface ICryptoPageInfoLeft {
+    crypto: oneCryptoType
+}
+
+export interface ICryptoGraph {
+    id: string | undefined
+};
 
 export type OneCryptoAction = getOneCryptoAction | getOneCryptoErrorAction | getOneCryptoSuccessAction
 
 export type CryptoAction = getAllCryptoAction | getAllCryptoErrorAction | getAllCryptoSuccessAction
 
 export type WalletCryptoAction = getCryptoWalletAction | removeCryptoWalletAction
+
+const GET_CRYPTO_HISTORY = "GET_CRYPTO_HISTORY";
+export { GET_CRYPTO_HISTORY };
