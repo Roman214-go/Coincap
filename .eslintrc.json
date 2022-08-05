@@ -34,9 +34,10 @@
         "object-curly-spacing": [2, "always"],
         "linebreak-style": ["error", "windows"],
         "semi": ["error", "always"],
-        "max-len": ["error", {"code": 110, "tabWidth": 4}],
+        "max-len": ["error", {"code": 120, "tabWidth": 4}],
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"]
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-explicit-any": "off"
     },
     "settings": {
         "import/resolver": {

@@ -19,7 +19,7 @@ const CryptoPage:React.FC = () => {
   return (
     <>
       {
-        !error && crypto.length != 0 ? <CryptoCont crypto={crypto[0]} id={id}/> : "Not found"
+        !error && !loading ? <CryptoCont crypto={crypto} id={id}/> : "Not found"
       }
     </>
   );

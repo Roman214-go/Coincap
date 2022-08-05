@@ -4,7 +4,6 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const HeaderProfile:React.FC = () => {
   const { totalPrice, exchange } = useTypedSelector((state) => state.wallet);
-  console.log(totalPrice);
 
   return (
     <div className="header__profile">

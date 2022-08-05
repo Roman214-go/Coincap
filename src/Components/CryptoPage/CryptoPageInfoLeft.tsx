@@ -1,20 +1,22 @@
 import React from "react";
 import convertNumber from "../../helper/convertNumbers";
+import { useAction } from "../../hooks/useAction";
 import { ICryptoPageInfoLeft } from "../../types/Crypto";
 
 const CryptoPageInfoLeft:React.FC<ICryptoPageInfoLeft> = ({ crypto } : ICryptoPageInfoLeft) => {
-  console.log(crypto);
-
+  const { changeWallet } = useAction();
   return (
     <div className="crypto__info__left">
-      <div className="crypto__info__left__name crypto__info__left__cont">
+      <div className="left__name crypto__info__left__cont">
         <h1>{crypto.name}</h1>
         <p>{crypto.symbol}</p>
-        <button className="button__add-crypto crypto__info__left__button">+</button>
+        <button className="button__add-crypto left__button" onClick={() => changeWallet(crypto)}>
+          +
+        </button>
       </div>
-      <div className="crypto__info__left__price crypto__info__left__cont">
+      <div className="left__price crypto__info__left__cont">
         <h3>Price:</h3>
-        <p style={{ fontWeight: "700" }}>${convertNumber(crypto.priceUsd)}</p>
+        <p>${convertNumber(crypto.priceUsd)}</p>
       </div>
       <a href={crypto.explorer} target="_blank" rel="noreferrer">Explore</a>
     </div>

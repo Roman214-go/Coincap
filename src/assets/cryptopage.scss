@@ -9,7 +9,7 @@
     grid-template-columns: repeat(3, 1fr);
     width: 75%;
     gap: 15%;
-    .crypto__info__right__cont {
+    .right__cont {
         h3 {
             font-size: 1.1em;
             font-weight: 700;
@@ -36,7 +36,7 @@
     h1 {
         font-size: 2em;
     }
-    .crypto__info__left__price {
+    .left__price {
         h3 {
             font-size: 1.1em;
             margin-bottom: 3%;
@@ -45,7 +45,7 @@
             font-size: 1.4em;
         }
     }
-    .crypto__info__left__name {
+    .left__name {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -55,7 +55,7 @@
             border-radius: 5px;
         }
     }
-    .crypto__info__left__button {
+    .left__button {
         margin: 0;
     }    
 }

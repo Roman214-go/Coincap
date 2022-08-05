@@ -2,7 +2,7 @@ import { OneCryptoAction, oneCryptoActionTypes, OneCryptoState } from "../../typ
 
 
 const initialState: OneCryptoState = {
-  crypto: [],
+  crypto: {},
   loading: false,
   error: null,
 };
@@ -12,20 +12,20 @@ export const oneCryptoReducer = (state = initialState, action: OneCryptoAction):
   switch (action.type) {
     case oneCryptoActionTypes.GET_ONE_CRYPTO:
       return {
-        crypto: [],
+        crypto: {},
         loading: true,
         error: null,
       };
     case oneCryptoActionTypes.GET_ONE_CRYPTO_SUCCESS:
       return {
-        crypto: [action.payload],
+        crypto: action.payload,
         loading: false,
         error: null,
       };
 
     case oneCryptoActionTypes.GET_ONE_CRYPTO_ERROR:
       return {
-        crypto: [],
+        crypto: {},
         loading: false,
         error: action.payload,
       };

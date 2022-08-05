@@ -1,16 +1,16 @@
 export interface oneCryptoType {
-    id: string,
-    rank: string,
-    symbol: string,
-    name: string,
-    supply: string,
-    maxSupply: string,
-    marketCapUsd: string,
-    volumeUsd24Hr: string,
-    priceUsd: string,
-    changePercent24Hr: string,
-    vwap24Hr: string,
-    explorer: string
+    id?: string,
+    rank?: string,
+    symbol?: string,
+    name?: string,
+    supply?: string,
+    maxSupply?: string,
+    marketCapUsd?: string,
+    volumeUsd24Hr?: string,
+    priceUsd?: string,
+    changePercent24Hr?: string,
+    vwap24Hr?: string,
+    explorer?: string
 }
 
 export interface cryptoHistoryType {
@@ -30,7 +30,7 @@ export interface CryptoHistoryState {
 }
 
 export interface OneCryptoState {
-    crypto: Array<oneCryptoType>;
+    crypto: oneCryptoType;
     loading: boolean;
     error: null | string;
 }
